@@ -4,7 +4,7 @@
 Por la forma de almacenar estos datos interpreta los espacios como caracteres validos 
 tanto para usuario como para contraseña
 
-NOMBRE: "emma"    NOMBRE: "3221"   PERMISO:"user"
-NOMBRE: "ale"     NOMBRE: "abcd"   PERMISO:"user"
-NOMBRE: "admin"   NOMBRE: "admin"  PERMISO:"admin"
+USUARIO: "emma"    CONTRASEÑA: "3221"   PERMISO:"user"
+USUARIO: "ale"     CONTRASEÑA: "abcd"   PERMISO:"user"
+USUARIO: "admin"   CONTRASEÑA: "admin"  PERMISO:"admin"
 
