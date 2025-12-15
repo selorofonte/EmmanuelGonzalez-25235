@@ -1,0 +1,39 @@
+// Manejo de restricciones segun tipo de permiso 
+
+import React, { createContext, useState, useContext } from 'react';
+// Autenticación
+const AuthContext = createContext();
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [permiso, setPermiso] = useState(null);
+
+
+  const login = (username,permiso) => {
+    //Creación de token 
+    const token = `fake-token-${username}`;
+    localStorage.setItem('authToken', token); 
+    setUser(username);
+    setPermiso(permiso);
+  };
+  
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    setUser(null);
+  };
+
+  const valor =  { 
+    user, 
+    login, 
+    logout,
+    estaLogueado : !!user,
+    permiso};
+
+
+  return (
+    <AuthContext.Provider value={valor}>
+      {children}
+    </AuthContext.Provider> );
+}
+
+export const useAuthContext = () => useContext(AuthContext);
